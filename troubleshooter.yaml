@@ -6,8 +6,6 @@ spec:
   containers:
   - name: newrelic-troubleshooter
     image: docker.io/spolfliet/newrelic-troubleshooter:latest
-    ports:
-    - containerPort: 80
     env:
     - name: NRIA_LICENSE_KEY
       value: <NEW_RELIC_LICENSE_KEY>
