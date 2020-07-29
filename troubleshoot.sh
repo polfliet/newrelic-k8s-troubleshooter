@@ -58,11 +58,11 @@ if [ "$NEW_RELIC_REGION" == "EU" ]; then
     LOG_API="log-api.eu.newrelic.com"
 fi
 TIMESTAMP=`date +'%s'`
-echo "Command to execute: " curl -v "https://$LOG_API/log/v1" \
+echo "Command to execute: " curl -k -v "https://$LOG_API/log/v1" \
     -H "X-License-Key: $NRIA_LICENSE_KEY" \
     -H "Content-Type: application/json" \
     -d "{\"timestamp\": \"$TIMESTAMP\", \"message\": \"This is a test message from the New Relic troubleshooter\"}"
-curl -v "https://$LOG_API/log/v1" \
+curl -k -v "https://$LOG_API/log/v1" \
     -H "X-License-Key: $NRIA_LICENSE_KEY" \
     -H "Content-Type: application/json" \
     -d "{\"timestamp\": \"$TIMESTAMP\", \"message\": \"This is a test message from the New Relic troubleshooter\"}"
